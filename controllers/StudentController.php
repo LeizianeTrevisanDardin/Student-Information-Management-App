@@ -34,12 +34,18 @@ class StudentController {
             return false;
         }
 
-        $ok = $this->studentModel->create($studentId, $name, $email, $userId);
+        $result = $this->studentModel->create($studentId, $name, $email, $userId);
 
-        $_SESSION["message"] = $ok ? "Student added successfully" : "Student not added successfully";
-        $_SESSION["message_type"] = $ok ? "success" : "error";
-        return $ok;
-    }
+        if(!empty($result["ok"])) {
+            $_SESSION["message"] = "Student added successfully";
+            $_SESSION["message_type"] = "success";
+            return true;
+        } 
+
+        $_SESSION["message"] = $result["error"] ?? "Failed to add student.";
+        $_SESSION["message_type"] = "error";
+        return false;
+    }       
 
     public function delete(int $id, int $userId) {
         $ok = $this->studentModel->delete($id, $userId);
