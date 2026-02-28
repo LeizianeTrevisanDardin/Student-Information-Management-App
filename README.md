@@ -71,8 +71,9 @@ It allows authenticated users to manage student records securely.
 <hr>
 <h2 align="center"> Application Demo</h2>
  
- 
-https://github.com/user-attachments/assets/f9490c15-0f2f-42ef-a54d-c01e664691b4
+
+https://github.com/user-attachments/assets/608de878-268d-4cfc-ba5b-f2eb38a05d10
+
 
 <hr>
 
